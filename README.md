@@ -14,3 +14,5 @@ bbot ant long-running-build
 * Download the `bbot` script, and add it to your path
 * Install the [Twilio Python library](https://github.com/twilio/twilio-python) `pip install twilio`
 * Fill in `TWILIO_ACCOUNT_SID`, `TWILIO_AUTH_TOKEN`, `TWILIO_FROM`, `BBOT_TO` in `bbot`
+
+If you would rather get a Twitter DM, check out (the more complicated but more flexible) [Buildbot: Twitter DM Notifications](https://github.com/jatenate/buildbot).
