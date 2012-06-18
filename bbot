@@ -1,0 +1,21 @@
+#!/usr/bin/env python
+
+# Fill these in!
+TWILIO_ACCOUNT_SID = "ACXXXXXXXXXXX"
+TWILIO_AUTH_TOKEN = "YYYYYYYYYYYYYYY"
+TWILIO_FROM = '+15105551234'
+BBOT_TO = '+12125551234'
+
+from twilio.rest import TwilioRestClient
+import sys, subprocess
+
+# Must have a command passed in to execute
+assert len(sys.argv) > 1
+
+# Execute the command, print the result, and send a text
+p = subprocess.call(sys.argv[1:])
+
+result = "Command " + ("succeeded" if p == 0 else "failed") + ": " + sys.argv[1]
+print result
+
+TwilioRestClient(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN).sms.messages.create(to=BBOT_TO, from_=TWILIO_FROM, body=result)
